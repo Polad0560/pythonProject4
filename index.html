@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Platform - Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .investment-section {
+            margin-top: 30px;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+        .total-invested {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .table-container {
+            margin-top: 40px;
+        }
+        .investor-table th, .investor-table td {
+            padding: 15px;
+            text-align: center;
+        }
+        .highlight {
+            color: green;
+            font-weight: bold;
+        }
+        .welcome-section {
+            padding: 40px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        .features-section {
+            margin-top: 60px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .feature {
+            margin-bottom: 20px;
+        }
+        .feature-icon {
+            font-size: 2rem;
+            color: #007bff;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+    {% include 'layout.html' %}
+
+    <!-- Main Content -->
+    <div class="container investment-section">
+        <!-- Welcome Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="welcome-section text-center">
+                    <h1>Welcome to the Ponzi Investment Platform</h1>
+                    <p>Your one-stop platform for high-return investment packages. Our mission is to provide you with exceptional opportunities for growth.</p>
+                    <p>Join now and start your journey towards financial success. We offer a range of investment packages tailored to your needs.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="row features-section">
+            <div class="col-md-4 feature text-center">
+                <i class="feature-icon fas fa-chart-line"></i>
+                <h4>High Returns</h4>
+                <p>Enjoy high returns with a variety of investment options. Our packages are designed to maximize your earnings over time.</p>
+            </div>
+            <div class="col-md-4 feature text-center">
+                <i class="feature-icon fas fa-users"></i>
+                <h4>Community Support</h4>
+                <p>Be a part of a supportive investor community. Share your experiences and grow together.</p>
+            </div>
+            <div class="col-md-4 feature text-center">
+                <i class="feature-icon fas fa-hand-holding-usd"></i>
+                <h4>Easy Withdrawals</h4>
+                <p>Withdraw your earnings easily and efficiently. Your profits are always accessible to you when you need them.</p>
+            </div>
+        </div>
+
+        <!-- Total Investment Overview -->
+        <div class="row mt-5">
+            <div class="col-lg-12">
+                <div class="total-invested text-center">
+                    Total Amount Invested: <span class="highlight">${{ total_invested }}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Investor Overview Table -->
+        <div class="row table-container">
+            <div class="col-lg-12">
+                <h2 class="text-center">Investor Overview</h2>
+                <table class="table table-bordered investor-table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Investor Name</th>
+                            <th>Amount Invested</th>
+                            <th>Promised Return</th>
+                            <th>Investment Package</th>
+                            <th>Duration (Days)</th>
+                            <th>Daily Income</th>
+                            <th>Investment Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for investor in investors %}
+                        <tr>
+                            <td>{{ investor[1] }}</td>
+                            <td>${{ investor[2] }}</td>
+                            <td>${{ investor[3] }}</td>
+                            <td>{{ investor[4] }}</td>
+                            <td>{{ investor[5] }}</td>
+                            <td>${{ investor[6] }}</td>
+                            <td>{{ investor[7] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Investment Package Cards -->
+        <div class="row mt-5">
+            <div class="col-lg-12 text-center">
+                <h2>Available Investment Packages</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Super Partner</h5>
+                                <p class="card-text">Invest 85000 AZN - Daily Income: 0 AZN - Duration: 1095 days</p>
+                                <a href="{{ url_for('invest') }}" class="btn btn-success">Invest Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">VIP7</h5>
+                                <p class="card-text">Invest 2990 AZN - Daily Income: 164.4 AZN - Duration: 1095 days</p>
+                                <a href="{{ url_for('invest') }}" class="btn btn-success">Invest Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">VIP6</h5>
+                                <p class="card-text">Invest 1440 AZN - Daily Income: 72 AZN - Duration: 1095 days</p>
+                                <a href="{{ url_for('invest') }}" class="btn btn-success">Invest Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Invest Now Call-to-Action -->
+        <div class="row mt-5">
+            <div class="col-lg-12 text-center">
+                <a href="{{ url_for('invest') }}" class="btn btn-primary btn-lg">Invest Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer mt-5">
+        <p class="text-center">&copy; 2024 Ponzi Platform - All Rights Reserved | <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- FontAwesome for icons -->
+</body>
+</html>

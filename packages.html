@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Packages - Ponzi Platform</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .packages-section {
+            margin-top: 50px;
+        }
+        .package-card {
+            margin-bottom: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .card-body {
+            background-color: #ffffff;
+            padding: 20px;
+        }
+        .card-title {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .card-text {
+            margin: 15px 0;
+        }
+        .investment-details {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        .btn-invest {
+            background-color: #28a745;
+            color: #ffffff;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-invest:hover {
+            background-color: #218838;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    {% include 'layout.html' %}
+
+    <!-- Investment Packages Section -->
+    <div class="container packages-section">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1>Our Investment Packages</h1>
+                <p>Choose from our wide range of packages tailored to meet different investment goals. Explore the details below and pick the best one that fits your needs.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Super Partner Package -->
+            <div class="col-md-4">
+                <div class="card package-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Super Partner</h5>
+                        <p class="card-text">A premium investment option for long-term growth.</p>
+                        <ul class="list-unstyled">
+                            <li class="investment-details">Investment: 85,000 AZN</li>
+                            <li class="investment-details">Daily Income: 0 AZN</li>
+                            <li class="investment-details">Duration: 1095 Days</li>
+                            <li class="investment-details">Total Return: 15% After 3 Years</li>
+                        </ul>
+                        <a href="{{ url_for('invest') }}" class="btn-invest">Invest Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIP7 Package -->
+            <div class="col-md-4">
+                <div class="card package-card">
+                    <div class="card-body">
+                        <h5 class="card-title">VIP7</h5>
+                        <p class="card-text">Maximize your returns with VIP7 - an ideal option for mid-level investors.</p>
+                        <ul class="list-unstyled">
+                            <li class="investment-details">Investment: 2,990 AZN</li>
+                            <li class="investment-details">Daily Income: 164.4 AZN</li>
+                            <li class="investment-details">Duration: 1095 Days</li>
+                            <li class="investment-details">Total Return: 10% Over 3 Years</li>
+                        </ul>
+                        <a href="{{ url_for('invest') }}" class="btn-invest">Invest Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIP6 Package -->
+            <div class="col-md-4">
+                <div class="card package-card">
+                    <div class="card-body">
+                        <h5 class="card-title">VIP6</h5>
+                        <p class="card-text">VIP6 is perfect for those looking for a balanced investment opportunity.</p>
+                        <ul class="list-unstyled">
+                            <li class="investment-details">Investment: 1,440 AZN</li>
+                            <li class="investment-details">Daily Income: 72 AZN</li>
+                            <li class="investment-details">Duration: 1095 Days</li>
+                            <li class="investment-details">Total Return: 5% Over 3 Years</li>
+                        </ul>
+                        <a href="{{ url_for('invest') }}" class="btn-invest">Invest Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <!-- VIP5 Package -->
+            <div class="col-md-4">
+                <div class="card package-card">
+                    <div class="card-body">
+                        <h5 class="card-title">VIP5</h5>
+                        <p class="card-text">A starter investment option with guaranteed returns.</p>
+                        <ul class="list-unstyled">
+                            <li class="investment-details">Investment: 740 AZN</li>
+                            <li class="investment-details">Daily Income: 34.8 AZN</li>
+                            <li class="investment-details">Duration: 1095 Days</li>
+                            <li class="investment-details">Total Return: 8% Over 3 Years</li>
+                        </ul>
+                        <a href="{{ url_for('invest') }}" class="btn-invest">Invest Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIP4 Package -->
+            <div class="col-md-4">
+                <div class="card package-card">
+                    <div class="card-body">
+                        <h5 class="card-title">VIP4</h5>
+                        <p class="card-text">An excellent package for conservative investors.</p>
+                        <ul class="list-unstyled">
+                            <li class="investment-details">Investment: 384 AZN</li>
+                            <li class="investment-details">Daily Income: 16.56 AZN</li>
+                            <li class="investment-details">Duration: 1095 Days</li>
+                            <li class="investment-details">Total Return: 7% Over 3 Years</li>
+                        </ul>
+                        <a href="{{ url_for('invest') }}" class="btn-invest">Invest Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIP3 Package -->
+            <div class="col-md-4">
+                <div class="card package-card">
+                    <div class="card-body">
+                        <h5 class="card-title">VIP3</h5>
+                        <p class="card-text">VIP3 offers a low-risk investment option with moderate returns.</p>
+                        <ul class="list-unstyled">
+                            <li class="investment-details">Investment: 129 AZN</li>
+                            <li class="investment-details">Daily Income: 5.04 AZN</li>
+                            <li class="investment-details">Duration: 1095 Days</li>
+                            <li class="investment-details">Total Return: 4% Over 3 Years</li>
+                        </ul>
+                        <a href="{{ url_for('invest') }}" class="btn-invest">Invest Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <!-- VIP2 Package -->
+            <div class="col-md-4">
+                <div class="card package-card">
+                    <div class="card-body">
+                        <h5 class="card-title">VIP2</h5>
+                        <p class="card-text">A basic package for first-time investors looking to get started.</p>
+                        <ul class="list-unstyled">
+                            <li class="investment-details">Investment: 44 AZN</li>
+                            <li class="investment-details">Daily Income: 1.44 AZN</li>
+                            <li class="investment-details">Duration: 1095 Days</li>
+                            <li class="investment-details">Total Return: 3% Over 3 Years</li>
+                        </ul>
+                        <a href="{{ url_for('invest') }}" class="btn-invest">Invest Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Free Equipment Package -->
+            <div class="col-md-4">
+                <div class="card package-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Free Equipment</h5>
+                        <p class="card-text">A limited-time offer to get started without an initial investment.</p>
+                        <ul class="list-unstyled">
+                            <li class="investment-details">Investment: 0 AZN</li>
+                            <li class="investment-details">Daily Income: 1.92 AZN</li>
+                            <li class="investment-details">Duration: 2 Days</li>
+                            <li class="investment-details">Total Return: 0 AZN</li>
+                        </ul>
+                        <a href="{{ url_for('invest') }}" class="btn-invest">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer mt-5">
+        <p class="text-center">&copy; 2024 Ponzi Platform - All Rights Reserved | <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

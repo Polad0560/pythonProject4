@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invest Now - VantagePro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .invest-section {
+            margin-top: 50px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .invest-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .invest-header h1 {
+            font-weight: bold;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .btn-submit {
+            background-color: #28a745;
+            color: #ffffff;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-submit:hover {
+            background-color: #218838;
+            text-decoration: none;
+        }
+        .package-description {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        .package-title {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .package-details ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .package-details ul li {
+            margin-bottom: 10px;
+        }
+        .package-details ul li i {
+            color: #28a745;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    {% include 'layout.html' %}
+
+    <!-- Invest Now Section -->
+    <div class="container invest-section">
+        <div class="invest-header">
+            <h1>Invest Now</h1>
+            <p>Join our investment platform and choose the package that suits your financial goals. We offer a variety of options to cater to different investor profiles, ensuring that everyone has the opportunity to succeed.</p>
+        </div>
+
+        <!-- Investment Form -->
+        <form action="/invest" method="POST">
+            <div class="form-group">
+                <label for="name">Investor Name:</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="amount">Investment Amount (AZN):</label>
+                <input type="number" id="amount" name="amount" class="form-control" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="package">Select Investment Package:</label>
+                <select id="package" name="package" class="form-control">
+                    <option value="Super Partner">Super Partner - 85,000 AZN</option>
+                    <option value="VIP7">VIP7 - 2,990 AZN</option>
+                    <option value="VIP6">VIP6 - 1,440 AZN</option>
+                    <option value="VIP5">VIP5 - 740 AZN</option>
+                    <option value="VIP4">VIP4 - 384 AZN</option>
+                    <option value="VIP3">VIP3 - 129 AZN</option>
+                    <option value="VIP2">VIP2 - 44 AZN</option>
+                    <option value="Free Equipment">Free Equipment - 0 AZN</option>
+                </select>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn-submit">Invest Now</button>
+            </div>
+        </form>
+
+        <!-- Investment Package Descriptions -->
+        <div class="package-description mt-5">
+            <h2 class="package-title">Investment Package Details</h2>
+            <div class="package-details">
+                <h4>Super Partner</h4>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Investment Amount: 85,000 AZN</li>
+                    <li><i class="fas fa-check-circle"></i> Duration: 1095 Days</li>
+                    <li><i class="fas fa-check-circle"></i> Daily Income: 0 AZN</li>
+                    <li><i class="fas fa-check-circle"></i> Total Return: 15% After 3 Years</li>
+                </ul>
+                <h4>VIP7</h4>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Investment Amount: 2,990 AZN</li>
+                    <li><i class="fas fa-check-circle"></i> Duration: 1095 Days</li>
+                    <li><i class="fas fa-check-circle"></i> Daily Income: 164.4 AZN</li>
+                    <li><i class="fas fa-check-circle"></i> Total Return: 10% Over 3 Years</li>
+                </ul>
+                <h4>VIP6</h4>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Investment Amount: 1,440 AZN</li>
+                    <li><i class="fas fa-check-circle"></i> Duration: 1095 Days</li>
+                    <li><i class="fas fa-check-circle"></i> Daily Income: 72 AZN</li>
+                    <li><i class="fas fa-check-circle"></i> Total Return: 5% Over 3 Years</li>
+                </ul>
+                <h4>VIP5</h4>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Investment Amount: 740 AZN</li>
+                    <li><i class="fas fa-check-circle"></i> Duration: 1095 Days</li>
+                    <li><i class="fas fa-check-circle"></i> Daily Income: 34.8 AZN</li>
+                    <li><i class="fas fa-check-circle"></i> Total Return: 8% Over 3 Years</li>
+                </ul>
+                <h4>VIP4</h4>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Investment Amount: 384 AZN</li>
+                    <li><i class="fas fa-check-circle"></i> Duration: 1095 Days</li>
+                    <li><i class="fas fa-check-circle"></i> Daily Income: 16.56 AZN</li>
+                    <li><i class="fas fa-check-circle"></i> Total Return: 7% Over 3 Years</li>
+                </ul>
+                <h4>VIP3</h4>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Investment Amount: 129 AZN</li>
+                    <li><i class="fas fa-check-circle"></i> Duration: 1095 Days</li>
+                    <li><i class="fas fa-check-circle"></i> Daily Income: 5.04 AZN</li>
+                    <li><i class="fas fa-check-circle"></i> Total Return: 4% Over 3 Years</li>
+                </ul>
+                <h4>VIP2</h4>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Investment Amount: 44 AZN</li>
+                    <li><i class="fas fa-check-circle"></i> Duration: 1095 Days</li>
+                    <li><i class="fas fa-check-circle"></i> Daily Income: 1.44 AZN</li>
+                    <li><i class="fas fa-check-circle"></i> Total Return: 3% Over 3 Years</li>
+                </ul>
+                <h4>Free Equipment</h4>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Investment Amount: 0 AZN</li>
+                    <li><i class="fas fa-check-circle"></i> Duration: 2 Days</li>
+                    <li><i class="fas fa-check-circle"></i> Daily Income: 1.92 AZN</li>
+                    <li><i class="fas fa-check-circle"></i> Total Return: 0 AZN</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer mt-5">
+        <p class="text-center">&copy; 2024 VantagePro - All Rights Reserved | <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- FontAwesome for icons -->
+</body>
+</html>
